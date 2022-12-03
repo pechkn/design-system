@@ -1,0 +1,39 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Basics" />
+
+# Basics
+
+## Colors
+
+#e52200
+#d14500
+#8e7200
+#448400
+#008472
+#5162ff
+#b41eff
+#b619ff
+#ea003a
+
+MD's approach is untenable because it offers 3 primary colors, not counting the background, foreground and error ones. At a minimum, it is necessary to reduce such diversity, so as not to contradict the simplicity and universality.
+
+HID just provides an array of pretty colors, and basically uses the main brand or OS theme color all the time, as well as some red error color. But, including the high-contrast colorscheme, there are 4 sets of color, and that’s too much in my opinion. Why not we make all colors contrast enough to avoid creating high-contrast theme?
+
+## Dark mode
+
+## Elevation
+
+MD offers elevation, a way to visually separate elements. HIG does not have this, and thus shows that elevation is not necessary for clear and beautiful interfaces. Therefore, I will not use it either, so as not to contradict simplicity. In addition, the elevation in the light theme is done by shadows, and in the dark theme by colors, which to me contradicts the consistency.
+
+## Sizing and spacing
+
+Design systems for some reason usually give no recommendations about spacing elements.
+Spacing should be based on the size of the elements. According to research https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/, minimum tap target is around 42px; MD advices 48px, HID - 44px. To preserve versatility, I’ll reduce this number, since 48px tap target is great on mobile but often way too much for desktop mouse cursor. There are rules:
+Any clickable element should be minimum 40x40px, than assumes 24x24px content (width may vary significantly) with 8px padding
+Any small inner content such as icon or text should be 16px away from edge of screen, so
+Such content or it’s parent container should have 8px padding
+Any bar or non-fullscreen view container touching edge of screen must have 8px padding
+Each children container can have padding and gap of same or lesser size;
+Any component or container touching the parent view’s padding from the edge of the screen should have 8px padding to preserve 16px distance of content (text, icon etc) from edge of the screen.
+https://baymard.com/blog/line-length-readability

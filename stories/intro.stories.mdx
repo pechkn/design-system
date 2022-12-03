@@ -1,0 +1,94 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Intro" />
+
+# Design System
+
+## Intro
+
+Two [most common design systems](https://gs.statcounter.com/os-market-share), Google’s Material Design (MD) and Apple’s Human Interface Guidelines (HIG), struggle with different problems for a while. MD is ugly to many of users, and, moveover, the direction of it’s development by Google contradicts to the UI/UX principles. HIG may look more attractive but contains even more inconsistency and bad decisions. I don’t want to reinvent wheel, but, as many and many developers drop standartized libraries in rush for a unique look and branding, so am I. I will describe, compare, and evaluate each part of these design systems based on researches, and then propose my solution.
+
+## Structure
+
+**Layout** - whole page container that holds views, panels, etc
+
+- **Bar** - small vertical or horizontal and sometimes fixed container of contents and controls placed near the edge of the view
+- **View** - container with bars, controls and contents
+  - **Box** - interactive or non-interactive element consisting of content, i.e. button, input etc
+    - **Content** - simple element such as text, icon, image
+
+**Navigation** - all what the user can do to move through different sections of the app without modifying any data
+
+**Action** - all what the user can do, which is not navigation and which is represented by the content in the control
+
+HIG divides elements into 3 clear categories - controls, bars, views, and I will stick to this terminology and expand it. By controls I mean buttons, input boxes and any other interactive components consisting of simple elements. Bars - panels, menus, and other components that are limited in size and consist of uniform controls. Views - pages or their fragments, unlimited in size and consisting of bars and controls.
+
+## Base
+
+Flaco Design is based on:
+
+1. MD ideas, as the most widespread design system
+2. HIG ideas, for the same reason
+3. Set of Tailwindcss (TW) values, reduced for simplicity and consistency, because this CSS utility framework allows to create interfaces the fastest way among any others I’ve tried and has extremely well chosen defaults
+4. Significantly modified Bootstrap icons, because they aren’t as bold and somewhat cumbersome as MD icons, and more complete and consistent than other non-proprietary icon sets
+5. Tons of UX researches
+
+## General principles
+
+First of all, let's define and disclose the [general principles of UX design](https://www.nngroup.com/articles/ten-usability-heuristics) in order not to contradict them:
+
+1. **Visibility of system status**
+
+   Indicate loading of every single action, use skeleton views for pages
+
+2. **Clarity**
+
+   Describe actions and consequences exhaustively using only the simplest words and icons
+
+3. **User control**
+
+   Provide navigation with the ability to move forward and backward on all pages and functionality with the ability to undo and redo all actions
+
+4. **Consistency**
+
+   Use the narrowest and most rigorous list of styles, approaches and components
+
+5. **Error prevention**
+
+   Warn the user and avoid allowing him to do anything by mistake, hide from views and mark destructive actions red
+
+6. **Visibility of everything the user needs**
+
+   Remember that out of sight means out of mind and show user all actions, navigation destinations and only necessary information
+
+7. **Flexibility**
+
+   Create as versatile yet customizable interfaces as possible
+
+8. **Simplicity**
+
+   Remember that less is more, avoid using shadows, unnecessary borders, colors
+
+9. **Error correction**
+
+   Offer users an ability to edit and undo everything
+
+10. **Documentation**
+
+    Provide easy access to detailed description and explanation, help and support everywhere
+
+Moreover, development of cross-platform interfaces these days requires to place a great emphasis on
+
+11. **Functionality**
+
+    Consider design to be able to hold a very large number of actions and navigation
+
+12. **Accessibility**
+
+    - Always preserve color contrast ratio and font size
+    - Write semantic HTML
+    - Declare language of site
+    - Leave meaningful links
+    - Add placeholders and alt texts
+
+Examples of following practices include [targeting bottom of screen on mobile devices](https://www.smashingmagazine.com/2019/08/bottom-navigation-pattern-mobile-web-pages).
